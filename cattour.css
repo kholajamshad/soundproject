@@ -1,145 +1,59 @@
+/*image sizes need to be standardized*/
 body{
 	background-color: #57058b;
 }
 
-/*
-.cat{
-	position:relative;
-	width:200px;
-	height:200px;
-	border-radius: 50%;
-	margin: auto;
-}
-
-.cat img{
-	width:70%;
-}
-*/
-
-html {
-  box-sizing: border-box;
-  height: 100%;
-}
-
-body{
-	background-color: #57058b;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-  margin: 0;
-  padding: 0;
-}
 
 .container {
+	position: relative;
+	top:40px;
+	width: 100%;
+	height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
 }
 
-.thumbnails {
-  display: flex;
-  flex-direction: column;
-  line-height: 0;
-  
-  li {
-    flex: auto; 
-  }
-
-  a {
-    display: block;
-  }
+.controls{
+	display: flex;
+	flex-direction: column;
+	width:10%;
 }
 
-#logo{
-	width: 35vmin;
-    height: 35vmin;
-    object-fit: cover;
-    object-position: top;
+.main{
+	display: flex;
+	justify-content: center;
+	width:50%;
+	height: 60%;
 }
 
-#d2{
-	width: 35vmin;
-    height: 35vmin;
-    object-fit: cover;
-    object-position: top;
+.main img{
+	width: 65%;
+	border-radius: 20%;
 }
 
-#highline{
-	width: 35vmin;
-    height: 35vmin;
-    object-fit: cover;
-    object-position: top;
+.right { 
+  	width: 30%;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
 }
 
-#arts{
-	width: 35vmin;
-    height: 35vmin;
-    object-fit: cover;
-    object-position: top;
-}
-
-.slides {
-  overflow: hidden;
-  width: 75vmin;
-  height: 100vmin;
-  
-  li {
-    width: 75vmin;
-    height: 100vmin;
-    position: absolute;
-    z-index: 1;
-  }
+.thumbnails{
+	display: flex;
+	flex-direction: column;
 
 }
-
-#biglogo{
-	height: 100vmin;
-	object-position: top;
+.thumbnails img{
+	width: 80%;
+	height:70%;
 }
 
-#bigd2{
-	height: 100vmin;
-	object-position: top;
-
-}
-
-#bighighline{
-	height: 100vmin;
-	object-position: top;
-}
-
-#bigarts{
-	height: 100vmin;
-	object-position: top;
+.thumbnails img:hover{
+	cursor: pointer;
 }
 
 
-.slides li:target {
-  z-index: 3;
-  -webkit-animation: slide 1s 1;
-}
 
-.slides li:not(:target) {
-  -webkit-animation: hidden 1s 1;
-}
-
-@keyframes slide {
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-@keyframes hidden {
-  0% {
-    z-index: 2;
-  }
-  100% {
-    z-index: 2;
-  }
-}
