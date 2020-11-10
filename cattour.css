@@ -1,16 +1,145 @@
 body{
-	background-color: purple;
+	background-color: #57058b;
 }
 
+/*
 .cat{
 	position:relative;
-	width:150px;
-	height:150px;
-	background-color: black;
+	width:200px;
+	height:200px;
 	border-radius: 50%;
+	margin: auto;
 }
 
-#evil{
-	top:470px;
-	left:1080px;
+.cat img{
+	width:70%;
+}
+*/
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+body{
+	background-color: #57058b;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.thumbnails {
+  display: flex;
+  flex-direction: column;
+  line-height: 0;
+  
+  li {
+    flex: auto; 
+  }
+
+  a {
+    display: block;
+  }
+}
+
+#logo{
+	width: 35vmin;
+    height: 35vmin;
+    object-fit: cover;
+    object-position: top;
+}
+
+#d2{
+	width: 35vmin;
+    height: 35vmin;
+    object-fit: cover;
+    object-position: top;
+}
+
+#highline{
+	width: 35vmin;
+    height: 35vmin;
+    object-fit: cover;
+    object-position: top;
+}
+
+#arts{
+	width: 35vmin;
+    height: 35vmin;
+    object-fit: cover;
+    object-position: top;
+}
+
+.slides {
+  overflow: hidden;
+  width: 75vmin;
+  height: 100vmin;
+  
+  li {
+    width: 75vmin;
+    height: 100vmin;
+    position: absolute;
+    z-index: 1;
+  }
+
+}
+
+#biglogo{
+	height: 100vmin;
+	object-position: top;
+}
+
+#bigd2{
+	height: 100vmin;
+	object-position: top;
+
+}
+
+#bighighline{
+	height: 100vmin;
+	object-position: top;
+}
+
+#bigarts{
+	height: 100vmin;
+	object-position: top;
+}
+
+
+.slides li:target {
+  z-index: 3;
+  -webkit-animation: slide 1s 1;
+}
+
+.slides li:not(:target) {
+  -webkit-animation: hidden 1s 1;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes hidden {
+  0% {
+    z-index: 2;
+  }
+  100% {
+    z-index: 2;
+  }
 }
