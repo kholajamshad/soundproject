@@ -21,3 +21,31 @@ d2.addEventListener("click", () =>{
 })
 
 
+let meow=document.getElementById("meow");
+let translate=document.getElementById("translate");
+
+var meowcounter=0;
+meow.addEventListener("click", () => {
+	if(meowcounter==0){
+		meow.src="nomeow.png";
+		meowcounter++;
+	}
+	else{
+		meow.src="meow.png";
+		meowcounter=0;
+	}
+	
+})
+
+var talkcounter=0;
+translate.addEventListener("click", () => {
+	if(talkcounter==0){
+		translate.src="notalk.png";
+		talkcounter++;
+	}
+	else{
+		translate.src="talk.png";
+		talkcounter=0;
+	}
+	
+})
