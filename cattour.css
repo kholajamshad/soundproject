@@ -1,65 +1,86 @@
-body{
-	background-color:#89CFF0 ;/*#57058b #CCFFCC #CCCCFF;*/
-	font-family: "Architects Daughter";
-	font-size: 1.5em;
+body {
+  background-color: #89cff0; /*#57058b #CCFFCC #CCCCFF;*/
+  font-family: "Architects Daughter";
+  font-size: 1.5em;
 }
 
-
 .container {
-	position: relative;
-	top:30px;
-	width: 100%;
-	height: 100%;
+  position: relative;
+  top: 30px;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-
 }
 
-.controls{
-	display: flex;
-	flex-direction: column;
-	width:10%;
-	text-align: center;
+.controls {
+  display: flex;
+  flex-direction: column;
+  width: 12%;
+  text-align: center;
 }
 
-.controls img{
-	width:80%;
-	cursor:pointer;
+.controls img {
+  width: 60%;
+  cursor: pointer;
+}
+.controls img:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 5px rgba(0, 0, 0, 0.19);
+  border-radius: 100px;
+}
+#logocat {
+  outline: 3px solid orange;
+}
+.main {
+  display: flex;
+  justify-content: center;
+  width: 40%;
 }
 
-.main{
-	display: flex;
-	justify-content: center;
-	width:40%;
+.main img {
+  height: 90vh;
+  border-radius: 15%;
 }
 
-.main img{
-	width: 85%;
-	border-radius: 20%;
+.right {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-color: white; */
 }
 
-.right { 
-  	width: 30%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+.thumbnails {
+  padding-left: 1.5vw;
+  margin: 3px;
+  display: flex;
+  flex-direction: row;
+}
+.thumbnails img {
+  border: 2px none;
+  border: none;
+  float: left;
+  width: 90%;
+  height: 100%;
 }
 
-.thumbnails{
-	display: flex;
-	flex-direction: row;
-
+.thumbnails img:hover {
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.thumbnails img{
-	width: 90%;
-	height:100%;
+.meowtext {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
-
-.thumbnails img:hover{
-	cursor: pointer;
+#playText {
+  margin-bottom: 0;
 }
-
-
-
+.playButton {
+  /* padding-top: none; */
+}
+.playButton img {
+  width: 10vw;
+}
