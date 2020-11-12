@@ -2,9 +2,10 @@ body {
   background-color: #89cff0;
   font-family: "Architects Daughter";
   font-size: 1.5em;
+  background-image: url("./images/background1.jpg");
 }
 
-
+/*large container with all the divs inside*/
 .container {
   position: relative;
   top: 30px;
@@ -16,7 +17,6 @@ body {
   align-items: center;
 }
 
-
 /*speaker image positioning and design*/
 .main {
   display: flex;
@@ -26,9 +26,8 @@ body {
 
 .main img {
   height: 90vh;
-  border-radius: 15%;
+  border-radius: 8%;
 }
-
 
 /*cat icon positioning and interactive design on hover*/
 .right {
@@ -36,9 +35,25 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* background-color: white; */
+  padding-bottom: 10vh;
+}
+.rightText {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
+.headerTextDiv {
+  max-width: 100%;
+  height: auto;
+  white-space: nowrap;
+}
+.headerText {
+  margin-top: 0;
+  font-size: 2.5em;
+  padding-bottom: 5vh;
+}
+
+/*div for the cat faces*/
 .thumbnails {
   padding-left: 1.5vw;
   margin: 3px;
@@ -57,11 +72,10 @@ body {
   cursor: pointer;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
+/*specific outline to first set logocat as the preset choice */
 #logocat {
-  outline: 3px solid orange;
+  outline: 3px solid white;
 }
-
 
 /*control buttons positioning and interactive design on hover*/
 .controls {
@@ -74,28 +88,37 @@ body {
 .controls img {
   width: 60%;
   cursor: pointer;
-  opacity:0.5;
+  opacity: 0.5;
 }
 
 .controls img:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 5px rgba(0, 0, 0, 0.19);
   border-radius: 100px;
 }
+/*START PAGE CSS*/
 
-.meowtext {
-  position: absolute;
-  bottom: 0;
-  right: 0;
+/*flexbox to wrap the elements*/
+.startText {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/*image of the start paw*/
+#pawStart {
+  cursor: pointer;
+  padding-top: 50px;
+  width: 80%;
 }
 
-#playText {
-  margin-bottom: 0;
-}
-
-.playButton {
-  /* padding-top: none; */
-}
-
-.playButton img {
-  width: 10vw;
+/*resizeability (isn't perfect tho) */
+@media screen and (max-width: 1024px) {
+  .headerTextDiv {
+    white-space: normal;
+  }
+  .main img {
+    max-width: 100%;
+    height: auto;
+  }
 }
