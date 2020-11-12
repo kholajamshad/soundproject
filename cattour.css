@@ -61,8 +61,7 @@ body {
   flex-direction: row;
 }
 .thumbnails img {
-  border: 2px none;
-  border: none;
+  opacity: 0.6;
   float: left;
   width: 90%;
   height: 100%;
@@ -74,7 +73,7 @@ body {
 }
 /*specific outline to first set logocat as the preset choice */
 #logocat {
-  outline: 3px solid white;
+  opacity: 1;
 }
 
 /*control buttons positioning and interactive design on hover*/
@@ -88,7 +87,7 @@ body {
 .controls img {
   width: 60%;
   cursor: pointer;
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
 .controls img:hover {

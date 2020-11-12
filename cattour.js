@@ -1,4 +1,5 @@
 //VISUAL
+
 //cat icon divs
 let speaker = document.getElementById("speaker");
 let logo = document.getElementById("logo");
@@ -11,6 +12,7 @@ let logocat = document.getElementById("logocat");
 let highlinecat = document.getElementById("highlinecat");
 let artscat = document.getElementById("artscat");
 let d2cat = document.getElementById("d2cat");
+
 
 //SOUND
 
@@ -32,68 +34,121 @@ var talk4 = new Audio("./audio/d1 cat 4.mp3");
 var currcataudio = meow1;
 var currtalkaudio = talk1;
 
+//audio counters
+var meowcounter = 0;
+var talkcounter = 0;
+
+
+
 //managing visual and audio settings on clicking cat icons
+//same code structure used for all four cat icon clicking
 
 logo.addEventListener("click", () => {
-  speaker.src = "./images/logocat.png";
-  logocat.style.outline = "3px solid white";
-  highlinecat.style.outline = "none";
-  artscat.style.outline = "none";
-  d2cat.style.outline = "none";
+  speaker.src = "./images/logocat.png"; //picture of selected cat appears as main speaker
+  //fades out all the unselected cats
+  logocat.style.opacity = "1";
+  highlinecat.style.opacity = "0.6";
+  artscat.style.opacity = "0.6";
+  d2cat.style.opacity = "0.6";
+  
+  //pauses audio and resets control counters when new cat is selected
+  //if condition checks if cat being clicked was already selected
+  //prevents overlap of audios associated with different cats
+  if(currcataudio != meow1){
+      meow.style.opacity = "0.6"; //button fades on pause
+      meowcounter = 0;
+      currcataudio.pause();
+      talk.style.opacity = "0.6";
+      talkcounter = 0;
+      currtalkaudio.pause();
+  }
 
   //setting current audio based on which cat is clicked
   currcataudio = meow1;
   currtalkaudio = talk1;
 });
 
+
 highline.addEventListener("click", () => {
   speaker.src = "./images/highlinecat.png";
-  logocat.style.outline = "none";
-  highlinecat.style.outline = "3px solid white";
-  artscat.style.outline = "none";
-  d2cat.style.outline = "none";
+  logocat.style.opacity = "0.6";
+  highlinecat.style.opacity = "1";
+  artscat.style.opacity = "0.6";
+  d2cat.style.opacity = "0.6";
+
+  if(currcataudio != meow2){
+      meow.style.opacity = "0.6"; 
+      meowcounter = 0;
+      currcataudio.pause();
+      talk.style.opacity = "0.6";
+      talkcounter = 0;
+      currtalkaudio.pause();
+  }
 
   currcataudio = meow2;
   currtalkaudio = talk2;
 });
 
+
 arts.addEventListener("click", () => {
   cat = 3;
   speaker.src = "./images/artscat.png";
-  logocat.style.outline = "none";
-  highlinecat.style.outline = "none";
-  artscat.style.outline = "3px solid white";
-  d2cat.style.outline = "none";
+  logocat.style.opacity = "0.6";
+  highlinecat.style.opacity = "0.6";
+  artscat.style.opacity = "1";
+  d2cat.style.opacity = "0.6";
+
+  if(currcataudio != meow3){
+      meow.style.opacity = "0.6"; 
+      meowcounter = 0;
+      currcataudio.pause();
+      talk.style.opacity = "0.6";
+      talkcounter = 0;
+      currtalkaudio.pause();
+  }
 
   currcataudio = meow3;
   currtalkaudio = talk3;
 });
 
+
 d2.addEventListener("click", () => {
   cat = 4;
   speaker.src = "./images/d2cat.png";
-  logocat.style.outline = "none";
-  highlinecat.style.outline = "none";
-  artscat.style.outline = "none";
-  d2cat.style.outline = "3px solid white";
+  logocat.style.opacity = "0.6";
+  highlinecat.style.opacity = "0.6";
+  artscat.style.opacity = "0.6";
+  d2cat.style.opacity = "1";
+
+  if(currcataudio != meow4){
+      meow.style.opacity = "0.6"; 
+      meowcounter = 0;
+      currcataudio.pause();
+      talk.style.opacity = "0.6";
+      talkcounter = 0;
+      currtalkaudio.pause();
+  }
 
   currcataudio = meow4;
   currtalkaudio = talk4;
 });
 
-//managing pause and play of current audio using a counter
+
+
+//managing pause and play of current audio using control buttons
+
 //for cat recordings
-var meowcounter = 0;
-var talkcounter = 0;
-let playing = false;
 meow.addEventListener("click", () => {
+  //if conditions pauses human recording if cat recording clicked
+  //prevents overlapping of human and cat recordings
   if (talkcounter == 1) {
-    talk.style.opacity = "0.5"; //button fades on pause
+    talk.style.opacity = "0.6"; //button fades on pause
     talkcounter = 0;
     currtalkaudio.pause();
   }
+
+  //if conditions plays current audio using counter
   if (meowcounter == 0) {
-    console.log(playing);
     meow.style.opacity = "1"; //button is highlighted while audio is playing
     currcataudio.play();
     meowcounter++;
@@ -101,37 +156,42 @@ meow.addEventListener("click", () => {
     currcataudio.addEventListener("ended", function () {
       this.currentTime = 0;
       meowcounter = 0;
-      meow.style.opacity = "0.5";
+      meow.style.opacity = "0.6"; //button fades on end of recording
     });
-  } else {
-    meow.style.opacity = "0.5"; //button fades on pause
+  } 
+
+  //else condition pauses current audio using counter
+  else {
+    meow.style.opacity = "0.6"; //button fades on pause
     meowcounter = 0;
     currcataudio.pause();
   }
 });
 
-//for human recordings
 
+//for human recordings (similar code as cat recordings)
 talk.addEventListener("click", () => {
+  //if conditions pauses cat recording if human recording clicked
   if (meowcounter == 1) {
-    meow.style.opacity = "0.5"; //button fades on pause
+    meow.style.opacity = "0.6"; 
     meowcounter = 0;
     currcataudio.pause();
   }
+
   if (talkcounter == 0) {
     talk.style.opacity = "1";
     currtalkaudio.play();
     talkcounter++;
-    playing = false;
     currtalkaudio.addEventListener("ended", function () {
       this.currentTime = 0;
       talkcounter = 0;
-      talk.style.opacity = "0.5";
+      talk.style.opacity = "0.6";
     });
-  } else {
-    talk.style.opacity = "0.5";
+  } 
+
+  else {
+    talk.style.opacity = "0.6";
     talkcounter = 0;
     currtalkaudio.pause();
-    playing = false;
   }
 });
