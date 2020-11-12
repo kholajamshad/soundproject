@@ -1,8 +1,9 @@
 body {
-  background-color: #89cff0; /*#57058b #CCFFCC #CCCCFF;*/
+  background-color: #89cff0;
   font-family: "Architects Daughter";
   font-size: 1.5em;
 }
+
 
 .container {
   position: relative;
@@ -15,24 +16,8 @@ body {
   align-items: center;
 }
 
-.controls {
-  display: flex;
-  flex-direction: column;
-  width: 12%;
-  text-align: center;
-}
 
-.controls img {
-  width: 60%;
-  cursor: pointer;
-}
-.controls img:hover {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 5px rgba(0, 0, 0, 0.19);
-  border-radius: 100px;
-}
-#logocat {
-  outline: 3px solid orange;
-}
+/*speaker image positioning and design*/
 .main {
   display: flex;
   justify-content: center;
@@ -44,6 +29,8 @@ body {
   border-radius: 15%;
 }
 
+
+/*cat icon positioning and interactive design on hover*/
 .right {
   width: 30%;
   display: flex;
@@ -70,17 +57,45 @@ body {
   cursor: pointer;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+#logocat {
+  outline: 3px solid orange;
+}
+
+
+/*control buttons positioning and interactive design on hover*/
+.controls {
+  display: flex;
+  flex-direction: column;
+  width: 12%;
+  text-align: center;
+}
+
+.controls img {
+  width: 60%;
+  cursor: pointer;
+  opacity:0.5;
+}
+
+.controls img:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 5px rgba(0, 0, 0, 0.19);
+  border-radius: 100px;
+}
+
 .meowtext {
   position: absolute;
   bottom: 0;
   right: 0;
 }
+
 #playText {
   margin-bottom: 0;
 }
+
 .playButton {
   /* padding-top: none; */
 }
+
 .playButton img {
   width: 10vw;
 }
