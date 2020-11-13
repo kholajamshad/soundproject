@@ -5,6 +5,22 @@ body {
   background-image: url("./images/background1.jpg");
 }
 
+.img_credits {
+  font-family: "Architects Daughter";
+  font-size: 0.5em;
+  position: absolute;
+  top: 95%;
+  left: 5%;
+}
+
+.sound_credits {
+  font-family: "Architects Daughter";
+  font-size: 0.5em;
+  position: absolute;
+  top: 85%;
+  left: 58%;
+}
+
 /*large container with all the divs inside*/
 .container {
   position: relative;
