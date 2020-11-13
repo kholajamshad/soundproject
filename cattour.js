@@ -28,7 +28,7 @@ var meow4 = new Audio("./audio/meow 4_new.mp3");
 var talk1 = new Audio("./audio/palm tree cat 1.mp3");
 var talk2 = new Audio("./audio/highline cat 2.mp3");
 var talk3 = new Audio("./audio/arts center cat 3.mp3");
-var talk4 = new Audio("./audio/d1 cat 4.mp3");
+var talk4 = new Audio("./audio/d1 cat 4.mp3"); //background audio: https://freesound.org/people/omgbong/sounds/411597/
 
 //current audio variables
 var currcataudio = meow1;
